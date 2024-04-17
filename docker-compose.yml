@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  kim-profile-service-api:
+    image: node:alpine
+    ports:
+      - 2727:2727
+    expose:
+      - 2727
+    working_dir: /mnt/app
+    volumes:
+      - ./:/mnt/app
+    command: sh -c "npm install && npm run start"
+    env_file:
+      - .env.production
+    depends_on:
+      - database
+    links:
+      - database
+  
+  database:
+    image: "postgis/postgis:13-3.1"
+    env_file:
+      - .env.production
+    volumes:
+      - db_data:/var/lib/postgresql/data/
+    ports:
+      - 5432:5432
+  
+  adminer:
+    image: adminer
+    ports:
+      - 1337:8080
+
+volumes:
+  db_data:
