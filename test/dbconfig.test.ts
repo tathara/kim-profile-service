@@ -1,6 +1,6 @@
 import { SequelizeModuleOptions } from '@nestjs/sequelize';
-import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from '../config';
-import { Profile } from './entities/profile.entity';
+import { DB_DATABASE_TEST, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from '../src/config';
+import { Profile } from '../src/db/entities/profile.entity';
 
 export const dbConnectionOptions: SequelizeModuleOptions = {
   dialect: 'postgres',
@@ -8,8 +8,8 @@ export const dbConnectionOptions: SequelizeModuleOptions = {
   port: Number(DB_PORT),
   username: DB_USER,
   password: DB_PASSWORD,
-  database: DB_DATABASE,
-  
+  database: DB_DATABASE_TEST,
+
   models: [Profile],
 
   synchronize: true,

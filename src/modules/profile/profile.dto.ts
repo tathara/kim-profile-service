@@ -1,5 +1,5 @@
 import { IsEmail, IsString, Length, Matches } from 'class-validator';
-import { Roles } from '@enums';
+import { Roles } from '../../enums';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateProfileDto {

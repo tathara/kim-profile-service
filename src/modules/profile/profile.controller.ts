@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ProfileService } from './profile.service';
 import { CreateProfileDto, ProfileResponseProps, UpdateProfileDto } from './profile.dto';
-import { Profile } from '@entities/profile.entity';
+import { Profile } from '../../db/entities/profile.entity';
 import {
   ApiBadRequestResponse,
   ApiCreatedResponse,
@@ -58,7 +58,7 @@ export class ProfileController {
     return this.profileService.getProfilePropsById(id);
   }
 
-  @ApiOperation({ summary: 'Updating profile with requested ID', })
+  @ApiOperation({ summary: 'Updating profile with requested ID' })
   @ApiOkResponse({
     status: 200,
     type: () => Profile,

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
+import { SequelizeModule } from '@nestjs/sequelize';
 import { ProfileController } from './profile.controller';
 import { ProfileService } from './profile.service';
-import { SequelizeModule } from '@nestjs/sequelize';
-import { Profile } from '@entities/profile.entity';
+import { Profile } from '../../db/entities/profile.entity';
 
 @Module({
   providers: [ProfileService],

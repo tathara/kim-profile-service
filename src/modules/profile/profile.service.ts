@@ -1,9 +1,9 @@
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Profile } from '@entities/profile.entity';
+import { Profile } from '../../db/entities/profile.entity';
 import { CreateProfileDto, UpdateProfileDto } from './profile.dto';
 import * as bcrypt from 'bcryptjs';
-import { SALT } from '@config';
+import { SALT } from '../../config';
 
 @Injectable()
 export class ProfileService {

@@ -1,13 +1,13 @@
 import { Column, DataType, Table, Model } from 'sequelize-typescript';
-import { Roles } from '@enums';
+import { Roles } from '../../enums';
 import { ApiProperty } from '@nestjs/swagger';
 
 interface IProfileProps {
-  fullName: string;
+  name: string;
 }
 
 @Table({ tableName: 'profile' })
-export class Profile extends Model<Profile, IProfileProps> {
+export class Profile extends Model<Profile> {
   @ApiProperty({
     type: Number,
     description: 'Users\'s profile ID',

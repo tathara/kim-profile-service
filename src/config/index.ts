@@ -5,4 +5,4 @@ export const { PORT } = process.env;
 
 export const { SALT } = process.env;
 
-export const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
+export const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE, DB_DATABASE_TEST } = process.env;
